@@ -1,0 +1,17 @@
+{
+	"name": "bad_apple",
+	"description": "bad apple dance",
+	"author": {
+		"name": "fang_yuan1"
+	},
+	"main": "index.js",
+	"version": "0.0.1",
+	"scripts": {
+		"serve": "node ./src/serve/serve.cjs"
+	},
+	"keywords": [],
+	"license": "MIT",
+	"dependencies": {},
+	"devDependencies": {},
+	"private": "true"
+} 
