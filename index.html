@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>bad apple</title>
+		<script>
+			fetch("./favicon.ico", () => {
+				return resp.blob();
+			});
+		</script>
+		<style>
+			body{
+				margin: 0;
+				padding: 0;
+				background-color: black;
+			}
+			div{
+				box-sizing: border-box;
+			}
+			button{
+				position: absolute;
+				top: 400px;
+			}
+		</style>
+	</head>
+	<body>
+		<style>
+			canvas{
+				margin-left: 20px;
+				margin-top: 20px;
+			}
+		</style>
+		<canvas id="canvas"></canvas>
+		<script defer src="./src/index.js"></script>
+		<audio id="audio" src="resources/audio/bad_apple.mp3"></audio>
+		<button onclick="audio.play();draw(1);">play</button>
+	</body>
+</html>
