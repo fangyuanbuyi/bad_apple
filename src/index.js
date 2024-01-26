@@ -1,7 +1,11 @@
 let image = new Image();
 const image_width = 288*2;
 const image_height = 216*2;
-const draw_interval = 165;
+const video_len = 219 * 1000; // ms
+const sprite_count = 2630;
+const draw_interval = video_len / sprite_count * 2;
+
+
 
 const canvas = document.getElementById("canvas");
 canvas.width = image_width;
@@ -25,7 +29,7 @@ function print() {
 }
 
 function draw(number) {
-	if(number == 2631) return;
+	if(number > sprite_count) return;
 	let str = number + "";
 	if(number < 100) str = "0" + str;
 	if(number < 10) str = "0" + str;
