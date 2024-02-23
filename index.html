@@ -12,27 +12,29 @@
 			body{
 				margin: 0;
 				padding: 0;
-				background-color: black;
-			}
-			div{
-				box-sizing: border-box;
+				/* background-color: black; */
 			}
 			button{
 				position: absolute;
 				top: 400px;
 			}
-		</style>
-	</head>
-	<body>
-		<style>
 			canvas{
 				margin-left: 20px;
 				margin-top: 20px;
+				width: 288*2;
+				height: 216*2;
+			}
+			div.container{
+				display: flex;
+				border: 1px solid black;
 			}
 		</style>
-		<canvas id="canvas"></canvas>
-		<script defer src="./src/index.js"></script>
-		<audio id="audio" src="resources/audio/bad_apple.mp3"></audio>
-		<button onclick="audio.play();draw(1);">play</button>
+	</head>
+	<script type="module" src="./src/index.js"></script>
+	<body>
+		<div class="container">
+			<canvas id="canvas"></canvas>
+			<button onclick="to_draw()">play</button>
+		</div>
 	</body>
 </html>
