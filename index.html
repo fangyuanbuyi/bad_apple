@@ -14,27 +14,36 @@
 				padding: 0;
 				/* background-color: black; */
 			}
-			button{
-				position: absolute;
-				top: 400px;
-			}
-			canvas{
-				margin-left: 20px;
-				margin-top: 20px;
-				width: 288*2;
-				height: 216*2;
+			div.canvas-container{
+				padding: 10px;
+				width: 576px;
+				height: 432px;
 			}
 			div.container{
 				display: flex;
+				flex-direction: column;
 				border: 1px solid black;
+				justify-content: center;
+				align-items: center;
+			}
+			div.btn-container{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 4px;
 			}
 		</style>
 	</head>
 	<script type="module" src="./src/index.js"></script>
 	<body>
 		<div class="container">
-			<canvas id="canvas"></canvas>
-			<button onclick="to_draw()">play</button>
+			<div class="canvas-container">
+				<canvas id="canvas"></canvas>
+			</div>
+			<div>
+				<button onclick="play()">play</button>
+				<button onclick="pause()">pause</button>
+			</div>
 		</div>
 	</body>
 </html>

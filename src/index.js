@@ -1,6 +1,17 @@
 import { ImageReader } from "./component/ImageReader.js";
 
-window.to_draw = () => {
-	const imageReader = new ImageReader();
-	imageReader.to_draw();
+window.play = () => {
+	if(!window.imageReader) {
+		const imageReader = new ImageReader();
+		window.imageReader = imageReader;
+	}
+	window.imageReader.play();
+}
+
+window.pause = () => {
+	if(window.imageReader == null) {
+		const imageReader = new ImageReader();
+		window.imageReader = imageReader;
+	}
+	window.imageReader.pause();
 }

@@ -9,6 +9,8 @@ export class ImageReader {
 	image_height;
 	video_len;
 	video;
+	draw_settime_out;
+	is_paused;
 
 	constructor() {
 		this.image = new Image();
@@ -30,19 +32,28 @@ export class ImageReader {
 		this.canvas2.height = this.image_height;
 		this.ctx2 = this.canvas2.getContext("2d");
 
+		this.is_paused = true;
 	}
 
 	draw() {
 		this.ctx.drawImage(this.video,0,0, this.image_width, this.image_height);
 
-		setTimeout(() => {
+		if(this.is_paused == true) return;
+		// console.log("!");
+		this.draw_settime_out = setTimeout(() => {
 			this.draw();
 		}, 5);  
 	}
 
-	to_draw() {
+	play() {
 		this.video.play();
+		this.is_paused = false;
 		this.draw();
+	}
+
+	pause() {
+		this.video.pause();
+		this.is_paused = true;
 	}
 
 }
